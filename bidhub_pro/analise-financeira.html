@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Financeira - BidHub Pro</title>
+    <link rel="stylesheet" href="assets/css/style-analise.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <aside class="sidebar-nav collapsed" id="sidebarNav">
+            <button class="menu-toggle" id="menuToggle"><span class="material-icons">menu</span></button>
+            <ul class="nav-menu">
+                <li><a href="detalhes.html?id=1" class="nav-link" title="Visão Geral"><span class="material-icons">visibility</span> <span class="nav-text">Visão Geral</span></a></li>
+                <li><a href="analise-financeira.html?id=1" class="nav-link active" title="Análise Financeira"><span class="material-icons">calculate</span> <span class="nav-text">Análise Financeira</span></a></li>
+                <li><a href="anotacoes.html?id=1" class="nav-link" title="Anotações"><span class="material-icons">edit_note</span> <span class="nav-text">Anotações</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content-unified">
+            <header class="details-header">
+                <div class="header-image-gallery"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200" alt="Apartamento de luxo"></div>
+                <div class="header-info">
+                    <div class="title-section"><h1>Apartamento de Luxo nos Jardins, São Paulo</h1></div>
+                    <div class="key-metrics-bar">
+                        <div class="metric-card"><span class="metric-title">Lance Inicial</span><span class="metric-value">R$ 1.200.000,00</span></div>
+                        <div class="metric-card"><span class="metric-title">Avaliação de Mercado</span><span class="metric-value" id="staticAvaliacaoMercado">R$ 1.800.000,00</span></div>
+                        <div class="metric-card success"><span class="metric-title">Deságio da Compra</span><span class="metric-value" id="staticDesagio">--</span></div>
+                        <div class="metric-card warning"><span class="metric-title">Score de Risco</span><span class="metric-value">6.8 / 10</span></div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-body">
+                <section class="content-section">
+                    <h2><span class="material-icons">calculate</span> Calculadora de Viabilidade (Venda)</h2>
+                    <p>Use os campos abaixo para simular diferentes cenários e analisar a rentabilidade deste investimento.</p>
+                    
+                    <div id="calculator-venda" class="calculator-wrapper active">
+                        <div class="calculator-mode-switcher">
+                            <label class="mode-label">Modo de Cálculo:</label>
+                            <div class="switch-field">
+                                <input type="radio" id="modo-lucro" name="venda-modo" value="lucro" checked/>
+                                <label for="modo-lucro">Calcular Lucro</label>
+                                <input type="radio" id="modo-lance" name="venda-modo" value="lance" />
+                                <label for="modo-lance">Calcular Lance Máximo</label>
+                            </div>
+                        </div>
+                        <div class="calculator-grid-didatic">
+                            <div class="calculator-column">
+                                <div class="calculator-card">
+                                    <h3><span class="material-icons">input</span> 1. Custos de Entrada</h3>
+                                    <fieldset>
+                                        <legend>Aquisição</legend>
+                                        <div class="input-group" id="group_v_arrematacao">
+                                            <label>Valor da Arrematação</label>
+                                            <div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_arrematacao" value="300.000,00"></div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Comissão Leiloeiro (%)</label>
+                                            <div class="percentage-group">
+                                                <input type="text" class="percentage-input" id="v_leiloeiro_perc" value="5,00">
+                                                <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_leiloeiro_valor" disabled></div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Despesas Iniciais</legend>
+                                        <div class="input-group">
+                                            <label>ITBI (%)</label>
+                                            <div class="percentage-group">
+                                                <input type="text" class="percentage-input" id="v_itbi_perc" value="3,00">
+                                                <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_itbi_valor" disabled></div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group"><label>Custos de Cartório</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_cartorio" value="5.000,00"></div></div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="calculator-column">
+                                <div class="calculator-card">
+                                    <h3><span class="material-icons">real_estate_agent</span> 2. Projeção de Saída</h3>
+                                    <fieldset>
+                                        <legend>Custos de Manutenção</legend>
+                                        <div class="input-group"><label>Prazo até a Venda (Meses)</label><input type="number" class="number-input" id="v_prazo" value="6"></div>
+                                        <div class="input-group"><label>Custo Mensal (Condo, IPTU)</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_custo_mensal" value="500,00"></div></div>
+                                        <div class="input-group"><label>Custo da Reforma</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_reforma" value="25.000,00"></div></div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Projeção de Venda</legend>
+                                        <div class="input-group"><label>Valor de Venda do Imóvel</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_venda" value="450.000,00"></div></div>
+                                        <div class="input-group">
+                                            <label>Comissão do Corretor (%)</label>
+                                            <div class="percentage-group">
+                                                <input type="text" class="percentage-input" id="v_corretor_perc" value="6,00">
+                                                <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_corretor_valor" disabled></div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Imposto de Renda s/ Lucro (%)</label>
+                                            <div class="percentage-group">
+                                                <input type="text" class="percentage-input" id="v_ir_perc" value="15,00">
+                                                <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_ir_valor" disabled></div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="calculator-column">
+                                <div class="calculator-card results-card">
+                                    <h3><span class="material-icons">assessment</span> 3. Resultados</h3>
+                                    <div class="input-group" id="group_v_roi_desejado" style="display: none;">
+                                        <label>ROI Desejado (%)</label>
+                                        <input type="text" class="percentage-input" id="v_roi_desejado" value="25,00">
+                                    </div>
+                                    <div class="output-item">
+                                        <span class="output-label">Custo Total do Investimento</span>
+                                        <span class="value red" id="v_out_custo_total">R$ 0,00</span>
+                                    </div>
+                                    <div class="output-item bold">
+                                        <span class="output-label">Lucro Líquido Estimado</span>
+                                        <span class="value success" id="v_out_lucro">R$ 0,00</span>
+                                    </div>
+                                    <div class="output-item">
+                                        <span class="output-label">ROI (Retorno Sobre Investimento)</span>
+                                        <span class="value success" id="v_out_roi">0,00%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/script-analise.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --light-gray: #f8f9fa;
+    --medium-gray: #dee2e6;
+    --dark-gray: #343a40;
+    --white: #ffffff;
+    --font-family-headings: 'Poppins', sans-serif;
+    --font-family-base: 'Roboto', sans-serif;
+    --font-family-special: 'Raleway', sans-serif;
+    --border-radius: 8px;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.main-content-area {
+    margin-left: 260px;
+    padding: 2.5rem;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.collapsed ~ .main-content-area {
+    margin-left: 80px;
+}
+
+.page-header {
+    margin-bottom: 1.5rem;
+}
+
+.page-title {
+    font-family: var(--font-family-headings);
+    font-size: 2rem;
+    color: var(--dark-gray);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 0 1rem;
+    box-shadow: var(--card-shadow);
+}
+
+.search-bar .material-icons {
+    color: var(--secondary-color);
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-family: var(--font-family-base);
+    background-color: transparent;
+}
+
+/* --- SEÇÃO DE FILTROS --- */
+.filters-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--font-family-base);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 0.5rem; /* Espaçamento entre os botões */
+    align-items: flex-end; /* Alinha os botões na base */
+}
+
+/* Botão principal de Filtrar */
+.btn-apply-filters {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+.btn-apply-filters:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Botão secundário de Limpar */
+.btn-clear-filters {
+    width: auto; /* Largura automática */
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid var(--medium-gray);
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    transition: all 0.2s ease;
+}
+.btn-clear-filters:hover {
+    background-color: var(--medium-gray);
+    color: var(--dark-gray);
+}
+
+.results-info {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-family-special);
+}
+
+/* --- GRID DE IMÓVEIS --- */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.property-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h4 {
+    font-family: var(--font-family-headings);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+.card-location {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-location .material-icons {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.card-footer {
+    border-top: 1px solid var(--light-gray);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.card-value p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.card-value span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--success-color);
+}
+
+/* --- ESTILOS ADICIONAIS PARA OS CARDS DE OPORTUNIDADE --- */
+
+/* Container da imagem para posicionar os novos elementos */
+.card-image-container {
+    position: relative;
+    height: 180px;
+}
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Estilo para o ID do Leilão */
+.property-id {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Estilo para o contador regressivo */
+.auction-timer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: var(--white);
+    padding: 20px 10px 10px 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family: var(--font-family-headings);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.auction-timer .material-icons {
+    font-size: 1.2rem;
+}
+
+/* Cores dinâmicas para o contador */
+.timer-ok { background-color: rgba(40, 167, 69, 0.8); } /* Verde */
+.timer-warning { background-color: rgba(255, 193, 7, 0.8); } /* Amarelo */
+.timer-urgent { background-color: rgba(220, 53, 69, 0.8); } /* Vermelho */
+.timer-expired { background-color: rgba(108, 117, 125, 0.8); } /* Cinza */
+
+
+/* Ajustes no rodapé do card para o incremento */
+.card-footer {
+    border-top: 1px solid var(--light-gray);
+    padding-top: 1rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.increment-value {
+    text-align: right;
+}
+
+.increment-value p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.increment-value span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidades - BidHub Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style-sidebar.css">
+    <link rel="stylesheet" href="assets/css/style-oportunidades.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar collapsed" id="appSidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo-link">
+                    <span class="material-icons">gavel</span>
+                    <h1 class="nav-text">BidHub Pro</h1>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <div class="user-info">
+                <p class="nav-text">Olá, <span id="userName">Usuário</span>!</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html"><span class="material-icons">dashboard</span><span class="nav-text">Dashboard</span></a></li>
+                <li><a href="oportunidades.html" class="active"><span class="material-icons">search</span><span class="nav-text">Oportunidades</span></a></li>
+                <li><a href="calculadora.html"><span class="material-icons">calculate</span><span class="nav-text">Calculadora</span></a></li>
+                <li><a href="#"><span class="material-icons">star_border</span><span class="nav-text">Favoritos</span></a></li>
+                <li><a href="configuracoes.html"><span class="material-icons">settings</span><span class="nav-text">Configurações</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="login.html" id="logoutBtn"><span class="material-icons">logout</span><span class="nav-text">Sair</span></a>
+            </div>
+        </aside>
+        
+        <main class="main-content-area">
+            <header class="page-header">
+                <h1 class="page-title">Encontre sua Próxima Oportunidade</h1>
+                <div class="search-bar">
+                    <span class="material-icons">search</span>
+                    <input type="text" id="searchInput" placeholder="Busque por cidade, bairro ou palavra-chave...">
+                </div>
+            </header>
+
+            <section class="filters-section">
+                <div class="filter-group">
+                    <label for="filterTipoImovel">Tipo de Imóvel</label>
+                    <select id="filterTipoImovel">
+                        <option value="">Todos</option>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Terreno">Terreno</option>
+                        <option value="Comercial">Comercial</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterEstado">Estado</label>
+                    <select id="filterEstado">
+                        <option value="">Todos</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                    </select>
+                </div>
+                 <div class="filter-group">
+                    <label for="filterTipoLeilao">Tipo de Leilão</label>
+                    <select id="filterTipoLeilao">
+                        <option value="">Todos</option>
+                        <option value="Judicial">Judicial</option>
+                        <option value="Extrajudicial">Extrajudicial</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterValorMin">Valor Mínimo</label>
+                    <div class="currency-input-wrapper">
+                        <span class="currency-symbol">R$</span>
+                        <input type="text" class="currency-input" id="filterValorMin" placeholder="Ex: 100.000,00">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="filterValorMax">Valor Máximo</label>
+                    <div class="currency-input-wrapper">
+                        <span class="currency-symbol">R$</span>
+                        <input type="text" class="currency-input" id="filterValorMax" placeholder="Ex: 500.000,00">
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button id="applyFiltersBtn" class="btn-apply-filters">
+                        <span class="material-icons">filter_alt</span>Filtrar
+                    </button>
+                    <button id="clearFiltersBtn" class="btn-clear-filters">Limpar</button>
+                </div>
+            </section>
+
+            <div class="results-info">
+                <p><strong id="resultsCount"></strong> imóveis encontrados</p>
+            </div>
+
+            <div class="property-grid" id="propertyGrid">
+                </div>
+        </main>
+    </div>
+
+    <script src="assets/js/script-oportunidades.js"></script>
+</body>
+</html>

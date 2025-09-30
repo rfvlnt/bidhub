@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Viabilidade - BidHub Pro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style-sidebar.css">
+    <link rel="stylesheet" href="assets/css/style-calculadora.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="appSidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="logo-link">
+                    <span class="material-icons">gavel</span>
+                    <h1 class="nav-text">BidHub Pro</h1>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <div class="user-info">
+                <p class="nav-text">Olá, <span id="userName">Usuário</span>!</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html"><span class="material-icons">dashboard</span><span class="nav-text">Dashboard</span></a></li>
+                <li><a href="oportunidades.html"><span class="material-icons">search</span><span class="nav-text">Oportunidades</span></a></li>
+                <li><a href="calculadora.html" class="active"><span class="material-icons">calculate</span><span class="nav-text">Calculadora</span></a></li>
+                <li><a href="configuracoes.html"><span class="material-icons">settings</span><span class="nav-text">Configurações</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="login.html" id="logoutBtn"><span class="material-icons">logout</span><span class="nav-text">Sair</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content-area">
+            <header class="page-header">
+                <h1 class="page-title"><span class="material-icons">calculate</span> Calculadora de Viabilidade</h1>
+                <p class="page-subtitle">Simule o potencial de um investimento antes de tomar uma decisão.</p>
+            </header>
+
+            <div class="strategy-selector">
+                <button class="strategy-btn active" data-calculator="venda"><span class="material-icons">real_estate_agent</span> Simular para Venda</button>
+                <button class="strategy-btn" data-calculator="aluguel"><span class="material-icons">apartment</span> Simular para Aluguel</button>
+            </div>
+
+            <div id="calculator-venda" class="calculator-wrapper active">
+    <div class="calculator-grid-didatic">
+
+        <div class="calculator-column">
+            <div class="calculator-card">
+                <h3><span class="material-icons">input</span> 1. Custos de Entrada</h3>
+                <fieldset>
+                    <legend>Aquisição</legend>
+                    <div class="input-group"><label>Valor da Arrematação</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_arrematacao" value="300.000,00"></div></div>
+                    <div class="input-group">
+                        <label>Comissão Leiloeiro (%)</label>
+                        <div class="percentage-group">
+                            <input type="text" class="percentage-input" id="v_leiloeiro_perc" value="5,00">
+                            <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_leiloeiro_valor" disabled></div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Despesas Iniciais</legend>
+                    <div class="input-group">
+                        <label>ITBI (%)</label>
+                        <div class="percentage-group">
+                            <input type="text" class="percentage-input" id="v_itbi_perc" value="3,00">
+                            <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_itbi_valor" disabled></div>
+                        </div>
+                    </div>
+                    <div class="input-group"><label>Custos de Cartório</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_cartorio" value="5.000,00"></div></div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="calculator-column">
+            <div class="calculator-card">
+                <h3><span class="material-icons">real_estate_agent</span> 2. Projeção de Saída</h3>
+                <fieldset>
+                    <legend>Custos de Manutenção (Holding Costs)</legend>
+                    <div class="input-group"><label>Prazo até a Venda (Meses)</label><input type="number" class="number-input" id="v_prazo" value="6"></div>
+                    <div class="input-group"><label>Custo Mensal (Condomínio, IPTU)</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_custo_mensal" value="500,00"></div></div>
+                    <div class="input-group"><label>Custo da Reforma</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_reforma" value="25.000,00"></div></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Projeção de Venda</legend>
+                    <div class="input-group"><label>Valor de Venda do Imóvel</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="v_venda" value="450.000,00"></div></div>
+                    <div class="input-group">
+                        <label>Comissão do Corretor (%)</label>
+                        <div class="percentage-group">
+                            <input type="text" class="percentage-input" id="v_corretor_perc" value="6,00">
+                            <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_corretor_valor" disabled></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Imposto de Renda s/ Lucro (%)</label>
+                        <div class="percentage-group">
+                            <input type="text" class="percentage-input" id="v_ir_perc" value="15,00">
+                            <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="v_ir_valor" disabled></div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="calculator-column">
+            <div class="calculator-card results-card">
+                <h3><span class="material-icons">assessment</span> 3. Resultados</h3>
+                <div class="output-item">
+                    <span class="output-label">Custo Total do Investimento</span>
+                    <span class="value red" id="v_out_custo_total">R$ 0,00</span>
+                </div>
+                <div class="output-item bold">
+                    <span class="output-label">Lucro Líquido Estimado</span>
+                    <span class="value success" id="v_out_lucro">R$ 0,00</span>
+                </div>
+                <div class="output-item">
+                    <span class="output-label">ROI (Retorno Sobre Investimento)</span>
+                    <span class="value success" id="v_out_roi">0,00%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <div id="calculator-aluguel" class="calculator-wrapper">
+     <div class="calculator-grid">
+        <div class="calculator-card">
+            <h3><span class="material-icons">input</span> Custos Iniciais</h3>
+            <div class="input-group"><label><span class="material-icons">attach_money</span> Valor da Arrematação</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="a_arrematacao" value="300.000,00"></div></div>
+            <div class="input-group"><label><span class="material-icons">local_police</span> Custos de Entrada (ITBI, Cartório, etc)</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="a_custos_entrada" value="15.000,00"></div></div>
+            <div class="input-group"><label><span class="material-icons">build</span> Custo da Reforma para Alugar</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="a_reforma" value="10.000,00"></div></div>
+        </div>
+        <div class="calculator-card">
+            <h3><span class="material-icons">attach_money</span> Receitas e Despesas Mensais</h3>
+            <div class="input-group"><label><span class="material-icons">home</span> Valor do Aluguel Mensal</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="a_aluguel" value="2.000,00"></div></div>
+            <div class="input-group">
+                <label><span class="material-icons">percent</span> Taxa de Vacância (%)</label>
+                <div class="percentage-group">
+                    <input type="text" class="percentage-input" id="a_vacancia_perc" value="8,00">
+                    <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="a_vacancia_valor" disabled></div>
+                </div>
+            </div>
+            <div class="input-group"><label><span class="material-icons">receipt_long</span> Despesas Mensais (Condomínio, IPTU)</label><div class="currency-input-wrapper"><span>R$</span><input type="text" id="a_despesas" value="500,00"></div></div>
+            <div class="input-group">
+                <label><span class="material-icons">manage_accounts</span> Taxa de Administração (%)</label>
+                <div class="percentage-group">
+                    <input type="text" class="percentage-input" id="a_adm_perc" value="10,00">
+                    <div class="currency-input-wrapper disabled"><span>R$</span><input type="text" id="a_adm_valor" disabled></div>
+                </div>
+            </div>
+        </div>
+        <div class="calculator-card results-card">
+            <h3><span class="material-icons">assessment</span> Resultados da Simulação (Aluguel)</h3>
+            <div class="output-item"><span class="output-label"><span class="material-icons">trending_flat</span> Investimento Total Inicial:</span><span class="value red" id="a_out_investimento">R$ 0,00</span></div>
+            <div class="output-item bold"><span class="output-label"><span class="material-icons">currency_exchange</span> Cash Flow Líquido Mensal:</span><span class="value success" id="a_out_cashflow">R$ 0,00</span></div>
+            <div class="output-item"><span class="output-label"><span class="material-icons">trending_up</span> Cap Rate (Retorno Anual):</span><span class="value success" id="a_out_caprate">0,00%</span></div>
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+    <script src="assets/js/script-calculadora.js"></script>
+</body>
+</html>

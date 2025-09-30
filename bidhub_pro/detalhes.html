@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê do Imóvel - BidHub Pro</title>
+    <link rel="stylesheet" href="assets/css/style-detalhes.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <aside class="sidebar-nav collapsed" id="sidebarNav">
+            <button class="menu-toggle" id="menuToggle"><span class="material-icons">menu</span></button>
+            <ul class="nav-menu">
+                <li><a href="detalhes.html" class="nav-link active" title="Visão Geral"><span class="material-icons">visibility</span> <span class="nav-text">Visão Geral</span></a></li>
+                <li><a href="analise-financeira.html" class="nav-link" title="Análise Financeira"><span class="material-icons">calculate</span> <span class="nav-text">Análise Financeira</span></a></li>
+                <li><a href="anotacoes.html" class="nav-link" title="Anotações"><span class="material-icons">edit_note</span> <span class="nav-text">Anotações</span></a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content-unified">
+            <header class="details-header">
+                <div class="header-image-gallery"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200" alt="Apartamento de luxo"></div>
+                <div class="header-info">
+                    <div class="title-section"><h1>Apartamento de Luxo nos Jardins, São Paulo</h1></div>
+                    <div class="key-metrics-bar">
+                        <div class="metric-card"><span class="metric-title">Lance Inicial</span><span class="metric-value">R$ 1.200.000,00</span></div>
+                        <div class="metric-card"><span class="metric-title">Avaliação de Mercado</span><span class="metric-value" id="staticAvaliacaoMercado">R$ 1.800.000,00</span></div>
+                        <div class="metric-card success"><span class="metric-title">Deságio da Compra</span><span class="metric-value" id="staticDesagio">--</span></div>
+                        <div class="metric-card warning"><span class="metric-title">Score de Risco</span><span class="metric-value">6.8 / 10</span></div>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="actions-section">
+                <div class="countdown"><p>Encerramento em:</p><span id="countdown-timer"></span></div>
+                <div class="action-buttons"><a href="#" class="cta-button">Habilitar para o Leilão</a></div>
+            </section>
+
+            <div class="content-body">
+                <section class="content-section">
+                    <h2><span class="material-icons">apartment</span> O Imóvel</h2>
+                    <p>Este apartamento exclusivo, localizado no coração do bairro Jardins, oferece uma combinação única de luxo e conveniência...</p>
+                    
+                    <h3>Características Principais</h3>
+                    <ul class="features-list">
+                        <li><span class="material-icons">square_foot</span> <strong>220 m²</strong> Área Útil</li>
+                        <li><span class="material-icons">bed</span> <strong>3</strong> Suítes</li>
+                        <li><span class="material-icons">bathtub</span> <strong>4</strong> Banheiros</li>
+                        <li><span class="material-icons">directions_car</span> <strong>3</strong> Vagas</li>
+                    </ul>
+
+                    <h3><span class="material-icons">location_on</span> Localização</h3>
+                    <div class="location-grid">
+                        <div class="address-text">
+                            <p>
+                                Rua Haddock Lobo, 1234<br>
+                                Jardim Paulista, São Paulo - SP<br>
+                                CEP: 01414-002
+                            </p>
+                        </div>
+                        <div class="map-container">
+                            <a href="https://www.google.com/maps" target="_blank" title="Ver no Google Maps">
+                                <img src="https://i.imgur.com/7g2v2gC.png" alt="Mapa da localização do imóvel">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2><span class="material-icons">gavel</span> Informações Legais e do Leilão</h2>
+                    <div class="info-grid">
+                        <div class="info-item"><span class="info-label">Situação</span><span class="info-value occupied">Ocupado</span></div>
+                        <div class="info-item"><span class="info-label">Matrícula</span><span class="info-value">Nº 123.456</span></div>
+                        <div class="info-item"><span class="info-label">IPTU Anual</span><span class="info-value">R$ 8.500,00</span></div>
+                        <div class="info-item"><span class="info-label">Condomínio</span><span class="info-value">R$ 2.200,00</span></div>
+                    </div>
+                    <h3>Histórico do Leilão</h3>
+                    <ul class="auction-history">
+                        <li data-value="1800000"><strong>1ª Praça:</strong> 24/08/2025 - R$ 1.800.000,00 (Sem licitantes)</li>
+                        <li class="history-discount" id="auction-discount-display"></li>
+                        <li data-value="1200000"><strong>2ª Praça:</strong> 31/08/2025 - R$ 1.200.000,00 (A decorrer)</li>
+                    </ul>
+                </section>
+
+                <section class="content-section cta-section">
+                    <h2><span class="material-icons">description</span> Edital do Leilão</h2>
+                    <p>O edital contém todas as regras, prazos e informações oficiais sobre este leilão. A leitura deste documento é fundamental antes de dar qualquer lance.</p>
+                    <a href="#" class="btn-primary" target="_blank">
+                        <span class="material-icons">picture_as_pdf</span> Visualizar Edital Completo
+                    </a>
+                </section>
+
+                <section class="content-section">
+                    <h2><span class="material-icons">warning</span> Alertas e Observações</h2>
+                    <div class="ai-alert">
+                        <span class="material-icons">error_outline</span>
+                        <p><strong>Atenção a Débitos Condominiais:</strong> Nossa análise identificou que débitos de condomínio anteriores à data do leilão poderão ser de responsabilidade do arrematante.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="assets/js/script-detalhes.js"></script>
+</body>
+</html>

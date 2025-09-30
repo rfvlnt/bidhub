@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - BidHub Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style-sidebar.css">
+    <link rel="stylesheet" href="assets/css/style-configuracoes.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="appSidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo-link">
+                    <span class="material-icons">gavel</span>
+                    <h1 class="nav-text">BidHub Pro</h1>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <div class="user-info">
+                <p class="nav-text">Olá, <span id="userName">Usuário</span>!</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html"><span class="material-icons">dashboard</span><span class="nav-text">Dashboard</span></a></li>
+                <li><a href="oportunidades.html"><span class="material-icons">search</span><span class="nav-text">Oportunidades</span></a></li>
+                <li><a href="calculadora.html"><span class="material-icons">calculate</span><span class="nav-text">Calculadora</span></a></li>
+                <li><a href="#"><span class="material-icons">star_border</span><span class="nav-text">Favoritos</span></a></li>
+                <li><a href="configuracoes.html" class="active"><span class="material-icons">settings</span><span class="nav-text">Configurações</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="login.html" id="logoutBtn"><span class="material-icons">logout</span><span class="nav-text">Sair</span></a>
+            </div>
+        </aside>
+        
+        <main class="main-content-area">
+            <header class="page-header">
+                <h1 class="page-title">Configurações e Perfil</h1>
+            </header>
+
+            <div class="settings-grid">
+                <div class="settings-card profile-card">
+                    <h2 class="card-title">Informações do Perfil</h2>
+                    <form id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Nome Completo</label>
+                                <input type="text" id="fullName" name="fullName" value="Marcelo">
+                            </div>
+                            <div class="form-group">
+                                <label for="birthDate">Data de Nascimento</label>
+                                <input type="date" id="birthDate" name="birthDate">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" value="marcelo@bidhub.com" disabled>
+                            <small>O e-mail não pode ser alterado.</small>
+                        </div>
+
+                        <h3 class="subsection-title">Endereço</h3>
+                        <div class="form-row">
+                             <div class="form-group cep-group">
+                                <label for="cep">CEP</label>
+                                <input type="text" id="cep" name="cep" placeholder="00000-000">
+                            </div>
+                             <div class="form-group address-group">
+                                <label for="address">Logradouro</label>
+                                <input type="text" id="address" name="address">
+                            </div>
+                        </div>
+                         <div class="form-row">
+                            <div class="form-group">
+                                <label for="number">Número</label>
+                                <input type="text" id="number" name="number">
+                            </div>
+                             <div class="form-group">
+                                <label for="complement">Complemento</label>
+                                <input type="text" id="complement" name="complement">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Cidade</label>
+                                <input type="text" id="city" name="city">
+                            </div>
+                            <div class="form-group">
+                                <label for="state">Estado</label>
+                                <input type="text" id="state" name="state">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Salvar Perfil Completo</button>
+                    </form>
+                </div>
+
+                <div class="sidebar-column">
+                    <div class="settings-card">
+                        <h2 class="card-title">Alterar Senha</h2>
+                        <form id="passwordForm">
+                            <div class="form-group">
+                                <label for="currentPassword">Senha Atual</label>
+                                <input type="password" id="currentPassword" name="currentPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">Nova Senha</label>
+                                <input type="password" id="newPassword" name="newPassword" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="confirmPassword">Confirmar Nova Senha</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Alterar Senha</button>
+                        </form>
+                    </div>
+                    <div class="settings-card">
+                <h2 class="card-title">Preferências da Plataforma</h2>
+
+                <div class="preference-group">
+                    <label class="preference-label">Tema Visual</label>
+                    <div class="theme-switcher">
+                        <button type="button" class="theme-btn active" data-theme="light">
+                            <span class="material-icons">light_mode</span> Claro
+                        </button>
+                        <button type="button" class="theme-btn" data-theme="dark">
+                            <span class="material-icons">dark_mode</span> Escuro
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preference-group">
+                    <label class="preference-label">Tamanho da Fonte</label>
+                    <div class="font-size-switcher">
+                        <button type="button" class="font-btn" data-size="small">A</button>
+                        <button type="button" class="font-btn active" data-size="medium">A</button>
+                        <button type="button" class="font-btn" data-size="large">A</button>
+                    </div>
+                </div>
+
+                <div class="preference-group">
+                    <label class="preference-label">Animações</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="reduceMotionToggle" checked>
+                        <span class="slider"></span>
+                        <span class="toggle-label">Animações Ativadas</span>
+                    </label>
+                </div>
+            </div>
+    <div class="settings-card plan-card">
+        </div>       
+                    <div class="settings-card plan-card">
+                        <h2 class="card-title">Meu Plano</h2>
+                        <div class="plan-info">
+                            <div class="plan-name">
+                                <span class="material-icons">workspace_premium</span>
+                                <h3>BidHub Pro Anual</h3>
+                            </div>
+                            <p class="plan-validity">Válido até: <strong>10 de Agosto de 2025</strong></p>
+                            <a href="#" class="btn-secondary">Gerenciar Assinatura</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/script-configuracoes.js"></script>
+</body>
+</html>

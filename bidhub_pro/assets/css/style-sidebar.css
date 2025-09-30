@@ -1,0 +1,182 @@
+:root {
+    --sidebar-bg: #2c3e50;
+    --sidebar-text: #ecf0f1;
+    --sidebar-hover: #34495e;
+    --sidebar-active: #1abc9c;
+    --border-radius: 8px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: width 0.3s ease-in-out;
+    width: 260px; /* Largura expandida */
+}
+
+.sidebar.collapsed {
+    width: 80px; /* Largura recolhida */
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--sidebar-hover);
+}
+
+.sidebar-header .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sidebar-header .logo-link h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 0 10px;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--sidebar-text);
+    cursor: pointer;
+}
+
+.user-info {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--sidebar-hover);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.user-info p {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: background-color .3s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-nav li a:hover {
+    background-color: var(--sidebar-hover);
+}
+
+.sidebar-nav li a.active {
+    background-color: var(--sidebar-active);
+    font-weight: 700;
+}
+
+.sidebar-nav .material-icons {
+    margin-right: 15px;
+}
+
+.sidebar.collapsed .nav-text {
+    display: none;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--sidebar-hover);
+}
+
+.sidebar-footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--sidebar-text);
+    white-space: nowrap;
+    overflow: hidden;
+    transition: background-color 0.2s;
+}
+
+.sidebar-footer a:hover {
+    background-color: #c0392b;
+}
+/* --- TEMA MODO ESCURO --- */
+
+/* Estas regras aplicam-se quando o <html> tem o atributo data-theme="dark" */
+[data-theme="dark"] {
+    --sidebar-bg: #1a1a1a;
+    --sidebar-text: #e0e0e0;
+    --sidebar-hover: #333;
+    
+    --primary-color: #3498db;
+    --primary-hover: #5dade2;
+
+    --light-gray: #2c2c2c;
+    --medium-gray: #444;
+    --dark-gray: #f5f5f5; /* Texto principal claro */
+    --white: #212121; /* Fundos principais escuros */
+
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes específicos para o Modo Escuro */
+[data-theme="dark"] body {
+    background-color: #121212;
+    color: var(--dark-gray);
+}
+
+[data-theme="dark"] .settings-card,
+[data-theme="dark"] .card {
+    background-color: var(--white); /* que agora é #212121 */
+    border-color: var(--medium-gray) !important;
+}
+
+[data-theme="dark"] .form-group input {
+    background-color: #333;
+    border-color: #555;
+    color: #f5f5f5;
+}
+
+[data-theme="dark"] .btn-clear-filters,
+[data-theme="dark"] .theme-btn, 
+[data-theme="dark"] .font-btn {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+[data-theme="dark"] .btn-clear-filters:hover,
+[data-theme="dark"] .theme-btn:hover, 
+[data-theme="dark"] .font-btn:hover {
+    background-color: var(--medium-gray);
+}
+
+[data-theme="dark"] .theme-btn.active, 
+[data-theme="dark"] .font-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}

@@ -1,0 +1,396 @@
+/* --- GLOBAIS E VARIÁVEIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c757d;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --white: #ffffff;
+    --font-family-headings: 'Poppins', sans-serif;
+    --font-family-base: 'Roboto', sans-serif;
+    --container-width: 1200px;
+}
+
+body {
+    font-family: var(--font-family-base);
+    margin: 0;
+    background-color: var(--white);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- BOTÕES GLOBAIS --- */
+.btn {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--dark-gray);
+}
+
+.btn-large {
+    font-size: 1.1rem;
+    padding: 15px 35px;
+}
+
+/* --- HEADER --- */
+.main-header {
+    background: transparent;
+    padding: 1.5rem 0;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+.logo h1 {
+    font-family: var(--font-family-headings);
+    font-size: 1.8rem;
+    margin: 0 0 0 10px;
+}
+
+.nav-links-center {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links-center a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links-center a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links-center a:hover::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    position: relative;
+    color: var(--white);
+    padding: 14rem 0;
+    text-align: center;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 48, 102, 0.8), rgba(0, 21, 45, 0.9)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: var(--font-family-headings);
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+/* --- OUTRAS SEÇÕES --- */
+.features,
+.demo-section,
+.about-section,
+.pricing {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-family: var(--font-family-headings);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* FEATURES */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, .05);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-family: var(--font-family-headings);
+    margin-bottom: 1rem;
+}
+
+/* DEMO SECTION */
+.demo-section {
+    background-color: var(--light-gray);
+}
+
+.demo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.demo-text h2 {
+    font-family: var(--font-family-headings);
+    font-size: 2.5rem;
+    line-height: 1.3;
+}
+
+.demo-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+/* RODAPÉ */
+.main-footer {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* ANIMAÇÕES */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease-out, transform .8s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SEÇÃO DE PLANOS (PRICING) --- */
+.pricing {
+    background-color: var(--light-gray);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.pricing-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, .05);
+    padding: 2.5rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+/* Estilo para destacar o plano principal */
+.pricing-card.featured {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Emblema "Mais Popular" */
+.popular-badge {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5px 40px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transform: rotate(45deg);
+}
+
+.plan-header h3 {
+    font-family: var(--font-family-headings);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    font-family: var(--font-family-headings);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--dark-gray);
+}
+
+.plan-price .plan-period {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.plan-description {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    height: 40px; /* Garante alinhamento entre os cards */
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.plan-features .material-icons {
+    color: var(--primary-color);
+}
+
+.plan-features li:has(.material-icons.close) {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.plan-features .material-icons.close {
+    color: #ccc;
+}
+
+/* Novo estilo de botão para os planos não-principais */
+.btn-secondary-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-secondary-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Ajuste para o botão principal ocupar 100% da largura no card */
+.pricing-card .btn-primary {
+    width: 100%;
+    box-sizing: border-box;
+}

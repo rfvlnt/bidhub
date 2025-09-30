@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - BidHub Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style-sidebar.css">
+  <link rel="stylesheet" href="assets/css/style-dashboard.css">
+</head>
+<body>
+    <aside class="sidebar" id="appSidebar">
+        <div class="sidebar-header">
+            <a href="dashboard.html" class="logo-link">
+                <span class="material-icons">gavel</span>
+                <h1 class="nav-text">BidHub Pro</h1>
+            </a>
+            <button class="menu-toggle" id="menuToggle">
+                <span class="material-icons">menu</span>
+            </button>
+        </div>
+        <div class="user-info">
+            <p class="nav-text">Olá, <span id="userName">Usuário</span>!</p>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html" class="active"><span class="material-icons">dashboard</span><span class="nav-text">Dashboard</span></a></li>
+            <li><a href="oportunidades.html"><span class="material-icons">search</span><span class="nav-text">Oportunidades</span></a></li>
+            <li><a href="calculadora.html"><span class="material-icons">calculate</span><span class="nav-text">Calculadora</span></a></li>
+            <li><a href="configuracoes.html"><span class="material-icons">settings</span><span class="nav-text">Configurações</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="login.html" id="logoutBtn"><span class="material-icons">logout</span><span class="nav-text">Sair</span></a>
+        </div>
+    </aside>
+    
+    <main class="main-content-area">
+        <div class="page-header">
+            <h1 class="page-title">Dashboard</h1>
+        </div>
+
+        <div class="dashboard-top-grid">
+            <div class="overview-container">
+                <h2 class="dashboard-section-title">Visão Geral da Conta</h2>
+                <div class="overview-grid">
+                    <div class="card">
+                        <a href="oportunidades.html" class="card-cover-link" title="Ver oportunidades"></a>
+                        <span class="icon material-icons">visibility</span>
+                        <div class="details">
+                            <h3>12</h3>
+                            <p>Leilões em Análise</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#leiloes-favoritos" class="card-cover-link" title="Ver favoritos"></a>
+                        <span class="icon material-icons">star</span>
+                        <div class="details">
+                            <h3>5</h3>
+                            <p>Leilões Favoritados</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#" class="card-cover-link" title="Ver lembretes"></a>
+                        <span class="icon material-icons">notifications_active</span>
+                        <div class="details">
+                            <h3>8</h3>
+                            <p>Lembretes Ativos</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="#" class="card-cover-link" title="Ver arrematados"></a>
+                        <span class="icon material-icons">gavel</span>
+                        <div class="details">
+                            <h3>2</h3>
+                            <p>Leilões Arrematados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-wrapper">
+                <h2 class="dashboard-section-title">Calendário</h2>
+                <section class="calendar-container">
+                    <header class="calendar-header">
+                        <button class="calendar-nav" id="prev-month-btn"><span class="material-icons">chevron_left</span></button>
+                        <h3 id="current-month-year"></h3>
+                        <button class="calendar-nav" id="next-month-btn"><span class="material-icons">chevron_right</span></button>
+                    </header>
+                    <div class="calendar-weekdays">
+                        <div class="weekday">Dom</div><div class="weekday">Seg</div><div class="weekday">Ter</div>
+                        <div class="weekday">Qua</div><div class="weekday">Qui</div><div class="weekday">Sex</div>
+                        <div class="weekday">Sáb</div>
+                    </div>
+                    <div class="calendar-days" id="calendar-days-grid"></div>
+                </section>
+            </div>
+        </div>
+        
+        <h2 class="dashboard-section-title" id="leiloes-favoritos">Leilões Favoritos</h2>
+        <section class="recent-activity-table">
+            <table>
+        <thead>
+  <tr>
+    <th class="sortable" data-sort="imovel">
+      Imóvel
+      <span class="sort-icon material-icons"></span>
+    </th>
+    <th>Localização</th>
+    <th>Lance Atual</th>
+    <th class="sortable" data-sort="encerramento">
+      Encerramento
+      <span class="sort-icon material-icons"></span>
+    </th>
+    <th class="sortable" data-sort="meuLance" style="text-align: right;">
+      Meu Lance
+      <span class="sort-icon material-icons"></span>
+    </th>
+    <th>Status</th>
+  </tr>
+</thead>
+              <tbody id="favorite-auctions-body"></tbody>
+            </table>
+        </section>
+    </main>
+
+  <script src="assets/js/script-dashboard.js"></script>
+</body>
+</html>
